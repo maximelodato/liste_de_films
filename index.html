@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Films</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Recherche de Films</h1>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Rechercher un film..." required>
+            <button type="submit">Rechercher</button>
+        </form>
+        <div id="moviesContainer" class="movies-grid"></div>
+        <h2>Meilleurs Films</h2>
+        <div id="topMoviesContainer" class="top-movies"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
