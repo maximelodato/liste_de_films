@@ -2,7 +2,7 @@ document.getElementById('searchForm').addEventListener('submit', async function 
     e.preventDefault();
 
     const searchInput = document.getElementById('searchInput').value;
-    const apiKey = 'e3124a28'; // Remplace avec ta clé API
+    const apiKey = 'e3124a28'; 
 
     try {
         const response = await axios.get(`https://www.omdbapi.com/?s=${searchInput}&apikey=${apiKey}`);
@@ -26,11 +26,11 @@ document.getElementById('searchForm').addEventListener('submit', async function 
 });
 
 async function showMovieDetails(imdbID) {
-    const apiKey = 'e3124a28'; // Remplace avec ta clé API
+    const apiKey = 'e3124a28'; 
     const response = await axios.get(`https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`);
     const movie = response.data;
 
-    // Créer le contenu du modal
+    
     const modalContent = `
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -45,10 +45,10 @@ async function showMovieDetails(imdbID) {
     `;
 
     async function fetchTopMovies() {
-        const apiKey = 'e3124a28'; // Remplace avec ta clé API
-        const topMovies = ['tt0111161', 'tt0068646', 'tt0071562', 'tt0468569', 'tt0050083']; // Liste d'IMDB ID des meilleurs films
+        const apiKey = 'e3124a28'; 
+        const topMovies = ['tt0111161', 'tt0068646', 'tt0071562', 'tt0468569', 'tt0050083']; 
         const topMoviesContainer = document.getElementById('topMoviesContainer');
-        topMoviesContainer.innerHTML = ''; // Vide le conteneur avant d'ajouter
+        topMoviesContainer.innerHTML = ''; 
     
         for (const imdbID of topMovies) {
             const response = await axios.get(`https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`);
@@ -60,16 +60,16 @@ async function showMovieDetails(imdbID) {
         }
     }
     
-    // Appel de la fonction pour récupérer les meilleurs films lors du chargement
+
     fetchTopMovies();
 
-    // Créer le modal
+    
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML = modalContent;
     document.body.appendChild(modal);
 
-    // Afficher le modal
+    
     modal.style.display = "block";
 }
 
@@ -100,7 +100,7 @@ function observeMovie(movieElement) {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Charger l'image
+                
                 const img = entry.target.querySelector('img.lazy');
                 if (img) {
                     img.src = img.getAttribute('data-src');
