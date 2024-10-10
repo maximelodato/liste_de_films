@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recherche de Films</title>
+    <title>Film Search</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
 </head>
 <body>
     <div class="container">
         <h1>Recherche de Films</h1>
-        <form id="searchForm">
-            <input type="text" id="searchInput" placeholder="Rechercher un film..." required>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Entrez le nom du film" required>
             <button type="submit">Rechercher</button>
         </form>
-        <div id="moviesContainer" class="movies-grid"></div>
-        <h2>Meilleurs Films</h2>
-        <div id="topMoviesContainer" class="top-movies"></div>
+        <div class="movies-grid" id="movies-grid"></div>
     </div>
+
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        AOS.init(); 
+    </script>
 </body>
 </html>
